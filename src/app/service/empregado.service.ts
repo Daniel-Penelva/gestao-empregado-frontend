@@ -18,4 +18,9 @@ export class EmpregadoService {
     return this.httpClient.get<Empregado[]>(`${this.baseUrl}`);
   }
 
+  // Método para cadastrar empregado
+  cadastrarEmpregado(empregado: Empregado):Observable<Object>{
+    return this.httpClient.post(`${this.baseUrl}`, empregado);
+  }
+
 }
