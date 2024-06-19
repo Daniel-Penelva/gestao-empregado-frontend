@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Empregado } from '../model/empregado';
 import { EmpregadoService } from '../service/empregado.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar-empregado',
@@ -11,7 +12,7 @@ export class CadastrarEmpregadoComponent implements OnInit{
 
   empregado: Empregado = new Empregado();
 
-  constructor(private empregadoService: EmpregadoService){}
+  constructor(private empregadoService: EmpregadoService, private router: Router){}
 
   ngOnInit(): void {
   
@@ -21,7 +22,15 @@ export class CadastrarEmpregadoComponent implements OnInit{
     this.empregadoService.cadastrarEmpregado(this.empregado).subscribe(date => {
       console.log(date);
       alert("Empregado cadastrado com Sucesso!");
+
+      this.retornarListaEmpregado();
+
     }, error => console.log(error));
+  }
+
+  // Método para redirecionar (Router) para a página lista de empregados depois de cadastrar empregado
+  retornarListaEmpregado(){
+    this.router.navigate(['/empregados']);
   }
 
   onSubmit(){
