@@ -9,10 +9,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Daniel</td>
-        <td>Penelva</td>
-        <td>email</td>
+      <tr *ngFor="let empregado of empregados, index as i">
+        <td>{{ empregado.nome }}</td>
+        <td>{{ empregado.sobrenome }}</td>
+        <td>{{ empregado.email }}</td>
       </tr>
     </tbody>
   </table>
