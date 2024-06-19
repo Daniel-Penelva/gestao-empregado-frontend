@@ -1,0 +1,19 @@
+h1{
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+table{
+    width: 800px;
+    margin: 30px auto;               /* "auto" centraliza a tabela */ 
+    text-align: center;
+    border-collapse: collapse;       /* Colapsa as linhas da tabela */
+}
+
+th, td{
+    border: 1px solid #ddd;        /* Bordas da tabela */
+    padding: 10px;                   /* Espaçamento entre as células */
+    text-align: left;                /* Alinhamento da legenda */
+    border-collapse: collapse;       /* Colapsa as linhas da tabela */
+}
