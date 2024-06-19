@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ListaEmpregadosComponent } from './lista-empregados/lista-empregados.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CadastrarEmpregadoComponent } from './cadastrar-empregado/cadastrar-empregado.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CadastrarEmpregadoComponent } from './cadastrar-empregado/cadastrar-emp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,20 @@
-<p>cadastrar-empregado works!</p>
+<div class="col-md-6 offset-md-3">
+    <h1 class="text-center">Cadastrar Empregado</h1>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" [(ngModel)]="empregado.nome" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" name="sobrenome" id="sobrenome" [(ngModel)]="empregado.sobrenome" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email" [(ngModel)]="empregado.email" class="form-control">
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-dark" (click)="onSubmit()">Cadastar</button>
+        </div>
+    </form>
+</div>
