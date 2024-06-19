@@ -1,0 +1,7 @@
+h1{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: azure;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);   /* Adiciona sombra ao formulário */
+}
