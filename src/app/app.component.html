@@ -1,7 +1,12 @@
-<div class="body">
-    <h1>Sistema de Gestão de Empregado</h1>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a routerLink="empregados" routerLinkActive="active" class="nav-link">Lista de Empregados</a>
+        </li>
+    </ul>
+</nav>
 
-    <div class="container">
-        <app-lista-empregados></app-lista-empregados>
-    </div>
+<h1>Sistema de Gestão de Empregado</h1>
+<div class="container">
+    <router-outlet></router-outlet>
 </div>
