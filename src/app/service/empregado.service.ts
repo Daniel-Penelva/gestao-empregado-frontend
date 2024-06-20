@@ -23,4 +23,9 @@ export class EmpregadoService {
     return this.httpClient.post(`${this.baseUrl}`, empregado);
   }
 
+  // Método para buscar empregado por id
+  buscarEmpregadoPorId(id: number):Observable<Empregado>{
+    return this.httpClient.get<Empregado>(`${this.baseUrl}/${id}`);
+  }
+
 }
