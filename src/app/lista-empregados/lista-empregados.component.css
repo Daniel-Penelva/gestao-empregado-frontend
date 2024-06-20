@@ -11,9 +11,21 @@ table{
     border-collapse: collapse;       /* Colapsa as linhas da tabela */
 }
 
-th, td{
+th{
+    border: 1px solid #ddd;        /* Bordas da tabela */
+    padding: 10px;                   /* Espaçamento entre as células */
+    text-align: center;                /* Alinhamento da legenda */
+    border-collapse: collapse;       /* Colapsa as linhas da tabela */
+}
+
+td{
     border: 1px solid #ddd;        /* Bordas da tabela */
     padding: 10px;                   /* Espaçamento entre as células */
     text-align: left;                /* Alinhamento da legenda */
     border-collapse: collapse;       /* Colapsa as linhas da tabela */
+}
+
+td button {
+    margin: 0 auto;
+    display: flex
 }

@@ -6,6 +6,7 @@
         <th scope="col">Nome</th>
         <th scope="col">Sobrenome</th>
         <th scope="col">Email</th>
+        <th scope="col">Buscar Empregado</th>
       </tr>
     </thead>
     <tbody>
@@ -13,6 +14,9 @@
         <td>{{ empregado.nome }}</td>
         <td>{{ empregado.sobrenome }}</td>
         <td>{{ empregado.email }}</td>
+        <td>
+          <button (click)="verDetalhesBuscaEmpregadoPorId(empregado.id)" class="btn btn-primary">Detalhes</button>
+        </td>
       </tr>
     </tbody>
   </table>
