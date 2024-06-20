@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CadastrarEmpregadoComponent } from './cadastrar-empregado/cadastrar-empregado.component';
 import { FormsModule } from '@angular/forms';
 import { AtualizarEmpregadoComponent } from './atualizar-empregado/atualizar-empregado.component';
+import { BuscarEmpregadoComponent } from './buscar-empregado/buscar-empregado.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { AtualizarEmpregadoComponent } from './atualizar-empregado/atualizar-emp
     AppComponent,
     ListaEmpregadosComponent,
     CadastrarEmpregadoComponent,
-    AtualizarEmpregadoComponent
+    AtualizarEmpregadoComponent,
+    BuscarEmpregadoComponent
   ],
   imports: [
     BrowserModule,
