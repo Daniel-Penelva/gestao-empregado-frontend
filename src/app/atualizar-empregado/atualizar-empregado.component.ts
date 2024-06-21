@@ -36,6 +36,10 @@ export class AtualizarEmpregadoComponent implements OnInit{
     }, error => console.log(error));
   }
 
+  // Método para botão cancelar roteando para lista de empregados
+  btnCancelar(){
+    this.router.navigate(['/empregados']);
+  }
 }
 
 /*Para fins de estudo:

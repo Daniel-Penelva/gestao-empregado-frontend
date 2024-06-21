@@ -19,3 +19,7 @@ form{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);      /* Adiciona sombra ao formulário */
     background-color: brown;                     /* Adiciona cor de fundo ao formulário */
 }
+
+button.btn-dark{
+    margin-left: 10px;
+}
