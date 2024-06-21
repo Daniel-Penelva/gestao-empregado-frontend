@@ -18,3 +18,7 @@ label{
     font-size: 20px;
     font-weight: bold;
 }
+
+button.btn-dark{
+    margin-top: 20px;
+}

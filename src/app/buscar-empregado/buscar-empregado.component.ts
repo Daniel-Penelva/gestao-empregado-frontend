@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmpregadoService } from '../service/empregado.service';
 import { Empregado } from '../model/empregado';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-buscar-empregado',
@@ -13,7 +13,7 @@ export class BuscarEmpregadoComponent implements OnInit{
   id: number;
   empregado: Empregado;
 
-  constructor(private route: ActivatedRoute, private empregadoService: EmpregadoService){}
+  constructor(private route: ActivatedRoute, private empregadoService: EmpregadoService, private router: Router){}
 
   ngOnInit(): void {
       this.id = this.route.snapshot.params['id'];
@@ -22,6 +22,11 @@ export class BuscarEmpregadoComponent implements OnInit{
         this.empregado = date;
         //alert(`Detalhes do empregado ${this.empregado.nome}`);
       });
+  }
+
+  // Método para botão cancelar roteando para lista de empregados
+  btnVoltar(){
+    this.router.navigate(['/empregados']);
   }
 
 }
