@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { AtualizarEmpregadoComponent } from './atualizar-empregado/atualizar-empregado.component';
 import { BuscarEmpregadoComponent } from './buscar-empregado/buscar-empregado.component';
 import { RemoverEmpregadoComponent } from './remover-empregado/remover-empregado.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { RemoverEmpregadoComponent } from './remover-empregado/remover-empregado
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

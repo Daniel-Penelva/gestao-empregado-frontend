@@ -8,6 +8,7 @@
         <th scope="col">Email</th>
         <th scope="col">Buscar Empregado</th>
         <th scope="col">Editar Empregado</th>
+        <th scope="col">Remover Empregado</th>
       </tr>
     </thead>
     <tbody>
@@ -20,6 +21,9 @@
         </td>
         <td>
           <button (click)="atualizarEmpregado(empregado.id)" class="btn btn-warning">Editar</button>
+        </td>
+        <td>
+          <button (click)="removerEmpregado(empregado.id)" class="btn btn-danger">Remover</button>
         </td>
       </tr>
     </tbody>

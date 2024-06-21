@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Empregado } from '../model/empregado';
 import { EmpregadoService } from '../service/empregado.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-lista-empregados',
@@ -33,4 +34,32 @@ export class ListaEmpregadosComponent implements OnInit {
   atualizarEmpregado(id: number){
     this.router.navigate(['atualizar-empregado', id]);
   }
+
+  // Remover empregado
+  removerEmpregado(id: number){
+    Swal.fire({
+      title: 'Confirmação',
+      text: "Confirma se deseja deletar empregado",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sim , deletar',
+      cancelButtonText: 'Não, cancelar',
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      buttonsStyling: true
+    }).then((result: any) => {
+      if(result.value){
+        this.empregadoService.removerEmpregado(id).subscribe(date => {
+          console.log(date);
+          this.buscarListaEmpregados();
+          Swal.fire(
+            'Empregado Deletado',
+            'Empregado deletado com sucesso',
+            'success'
+          )
+        })
+      }
+    })
+  }
+
 }

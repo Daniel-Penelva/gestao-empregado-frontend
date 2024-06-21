@@ -1,0 +1,28 @@
+Tutorial de Uso: https://www.youtube.com/watch?v=yVIboyPZqm8
+
+Página: https://sweetalert2.github.io/
+Github sweetalert2: https://github.com/sweetalert2/ngx-sweetalert2
+
+Instalar - comando no terminal: npm install sweetalert2 @sweetalert2/ngx-sweetalert2
+
+Etapas a serem feitas:
+
+1. Verificar no node_modules se foi instalado.
+
+2. Abrir arquivo angular.json
+    1. Vai até a propriedade "styles"
+    2 Add o caminho da instalação: ,"node_modules/sweetalert2/src/sweetalert2.scss"
+    3 Exemplificando:
+
+        "styles": [
+                "src/styles.css",
+                "node_modules/sweetalert2/src/sweetalert2.scss"
+                ],
+
+3. Importar no arquivo app.module.ts: SweetAlert2Module.forRoot()
+   Exemplificando:
+
+        imports: [
+            BrowserModule,
+            SweetAlert2Module.forRoot()
+        ]
