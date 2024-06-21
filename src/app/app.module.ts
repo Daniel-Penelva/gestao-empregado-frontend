@@ -9,6 +9,7 @@ import { CadastrarEmpregadoComponent } from './cadastrar-empregado/cadastrar-emp
 import { FormsModule } from '@angular/forms';
 import { AtualizarEmpregadoComponent } from './atualizar-empregado/atualizar-empregado.component';
 import { BuscarEmpregadoComponent } from './buscar-empregado/buscar-empregado.component';
+import { RemoverEmpregadoComponent } from './remover-empregado/remover-empregado.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { BuscarEmpregadoComponent } from './buscar-empregado/buscar-empregado.co
     ListaEmpregadosComponent,
     CadastrarEmpregadoComponent,
     AtualizarEmpregadoComponent,
-    BuscarEmpregadoComponent
+    BuscarEmpregadoComponent,
+    RemoverEmpregadoComponent
   ],
   imports: [
     BrowserModule,
