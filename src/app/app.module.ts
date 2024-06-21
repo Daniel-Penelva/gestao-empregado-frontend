@@ -9,7 +9,6 @@ import { CadastrarEmpregadoComponent } from './cadastrar-empregado/cadastrar-emp
 import { FormsModule } from '@angular/forms';
 import { AtualizarEmpregadoComponent } from './atualizar-empregado/atualizar-empregado.component';
 import { BuscarEmpregadoComponent } from './buscar-empregado/buscar-empregado.component';
-import { RemoverEmpregadoComponent } from './remover-empregado/remover-empregado.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
@@ -19,8 +18,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     ListaEmpregadosComponent,
     CadastrarEmpregadoComponent,
     AtualizarEmpregadoComponent,
-    BuscarEmpregadoComponent,
-    RemoverEmpregadoComponent
+    BuscarEmpregadoComponent
   ],
   imports: [
     BrowserModule,
