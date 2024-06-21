@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmpregadoService } from '../service/empregado.service';
 import { Empregado } from '../model/empregado';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-atualizar-empregado',
@@ -27,7 +28,7 @@ export class AtualizarEmpregadoComponent implements OnInit{
   // Método para redirecionar (Router) para a página lista de empregados
   retornarListaEmpregado(){
     this.router.navigate(['/empregados']);
-    alert(`Empregado ${this.empregado.nome} alterado com sucesso!`);
+    Swal.fire('Empregado alterado', `O empregado ${this.empregado.nome} foi alterado com sucesso!`);
   }
 
   onSubmit(){

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Empregado } from '../model/empregado';
 import { EmpregadoService } from '../service/empregado.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastrar-empregado',
@@ -21,7 +22,7 @@ export class CadastrarEmpregadoComponent implements OnInit{
   cadastrarEmpregado(){
     this.empregadoService.cadastrarEmpregado(this.empregado).subscribe(date => {
       console.log(date);
-      alert("Empregado cadastrado com Sucesso!");
+      //alert("Empregado cadastrado com Sucesso!");
 
       this.retornarListaEmpregado();
 
@@ -31,6 +32,7 @@ export class CadastrarEmpregadoComponent implements OnInit{
   // Método para redirecionar (Router) para a página lista de empregados depois de cadastrar empregado
   retornarListaEmpregado(){
     this.router.navigate(['/empregados']);
+    Swal.fire('Empregado registrado', `O empregado ${this.empregado.nome} foi cadastrado com sucesso!`);
   }
 
   onSubmit(){
