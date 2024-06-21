@@ -20,7 +20,7 @@ export class BuscarEmpregadoComponent implements OnInit{
       this.empregado = new Empregado();
       this.empregadoService.buscarEmpregadoPorId(this.id).subscribe(date => {
         this.empregado = date;
-        alert(`Detalhes do empregado ${this.empregado.nome}`);
+        //alert(`Detalhes do empregado ${this.empregado.nome}`);
       });
   }
 
