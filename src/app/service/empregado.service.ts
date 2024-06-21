@@ -28,4 +28,9 @@ export class EmpregadoService {
     return this.httpClient.get<Empregado>(`${this.baseUrl}/${id}`);
   }
 
+  // Método para atualizar empregado
+  atualizarEmpregado(id: number, empregado:Empregado): Observable<Object>{
+    return this.httpClient.put(`${this.baseUrl}/${id}`, empregado);
+  }
+
 }
