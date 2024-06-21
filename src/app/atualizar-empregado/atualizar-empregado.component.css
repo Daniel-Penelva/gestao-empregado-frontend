@@ -1,0 +1,21 @@
+h2{
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+label{
+    color: azure;
+}
+
+div{
+    margin: 15px auto;
+}
+
+form{
+    padding: 20px;                                 /* Adiciona padding para espaçamento interno */
+    border: 1px solid #ccc;                      /* Adiciona borda ao formulário */
+    border-radius: 5px;                            /* Adiciona arredondamento às bordas */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);      /* Adiciona sombra ao formulário */
+    background-color: brown;                     /* Adiciona cor de fundo ao formulário */
+}
