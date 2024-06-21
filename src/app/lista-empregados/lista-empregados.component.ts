@@ -28,4 +28,9 @@ export class ListaEmpregadosComponent implements OnInit {
   verDetalhesBuscaEmpregadoPorId(id: number){
     this.router.navigate(['buscar-empregado-id', id]);
   }
+
+  // rota para atualizar empregado
+  atualizarEmpregado(id: number){
+    this.router.navigate(['atualizar-empregado', id]);
+  }
 }
