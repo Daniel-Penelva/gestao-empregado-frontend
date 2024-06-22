@@ -1,20 +1,50 @@
 <h2>Editar Empregado</h2>
 
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit()" #empregadoForm = "ngForm">
     <div class="form-group">
         <label for="nome">Nome: </label>
-        <input type="text" name="nome" id="nome" [(ngModel)]="empregado.nome" class="form-control">
+        <input type="text" name="nome" id="nome" [(ngModel)]="empregado.nome" class="form-control" required minlength="4" maxlength="20" #nome = "ngModel">
+        <div class="alert alert-danger" *ngIf="nome && nome.invalid && (nome.dirty || nome.touched)">
+            <div *ngIf="nome.errors?.['required']">   <!-- O '?.' é para garantir que o objeto de erros não seja nulo antes de tentar acessar as propriedades. Isso evita que o erro seja gerado. -->
+                Digite seu nome por favor
+            </div>
+            <div *ngIf="nome.errors?.['minlength']">
+                O nome tem que conter no mínimo 4 caracteres
+            </div>
+            <div *ngIf="nome.errors?.['maxlength']">
+                O nome tem que conter no máximo 20 caracteres
+            </div>
+        </div>
     </div>
     <div class="form-group">
         <label for="sobrenome">Sobrenome: </label>
-        <input type="text" name="sobrenome" id="sobrenome" [(ngModel)]="empregado.sobrenome" class="form-control">
+        <input type="text" name="sobrenome" id="sobrenome" [(ngModel)]="empregado.sobrenome" class="form-control" required minlength="4" maxlength="20" #sobrenome = "ngModel">
+        <div class="alert alert-danger" *ngIf="sobrenome && sobrenome.invalid && (sobrenome.dirty || sobrenome.touched)">
+            <div *ngIf="sobrenome.errors?.['required']">   <!-- O '?.' é para garantir que o objeto de erros não seja nulo antes de tentar acessar as propriedades. Isso evita que o erro seja gerado. -->
+                Digite seu sobrenome por favor
+            </div>
+            <div *ngIf="sobrenome.errors?.['minlength']">
+                O sobrenome tem que conter no mínimo 4 caracteres
+            </div>
+            <div *ngIf="sobrenome.errors?.['maxlength']">
+                O sobrenome tem que conter no máximo 20 caracteres
+            </div>
+        </div>
     </div>
     <div class="form-group">
         <label for="email">Email: </label>
-        <input type="text" name="email" id="email" [(ngModel)]="empregado.email" class="form-control">
+        <input type="text" name="email" id="email" [(ngModel)]="empregado.email" class="form-control" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" #email="ngModel">
+        <div class="alert alert-danger" *ngIf="email && email.invalid && (email.dirty || email.touched)">
+            <div *ngIf="email.errors?.['required']">
+                Digite seu email por favor
+            </div>
+            <div *ngIf="email.errors?.['pattern']">
+                Por favor digite o email corretamente
+            </div>
+        </div>
     </div>
     <div class="form-group">
-        <button class="btn btn-success">Cadastrar</button>
+        <button class="btn btn-success" [disabled]="!empregadoForm.form.valid">Cadastrar</button>
         <button class="btn btn-dark" (click)="btnCancelar()">Cancelar</button>
     </div>
 </form>
