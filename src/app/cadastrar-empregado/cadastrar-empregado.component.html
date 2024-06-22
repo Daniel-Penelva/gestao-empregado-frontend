@@ -1,20 +1,74 @@
 <div class="col-md-6 offset-md-3">
     <h1 class="text-center">Cadastrar Empregado</h1>
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" #empregadoForm = "ngForm">
         <div class="form-group">
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome" [(ngModel)]="empregado.nome" class="form-control">
+            <input type="text" name="nome" id="nome" [(ngModel)]="empregado.nome" class="form-control" required minlength="4" maxlength="20" #nome = "ngModel">
+            <div class="alert alert-danger" *ngIf="nome && nome.invalid && (nome.dirty || nome.touched)">
+                <div *ngIf="nome.errors?.['required']">   <!-- O '?.' é para garantir que o objeto de erros não seja nulo antes de tentar acessar as propriedades. Isso evita que o erro seja gerado. -->
+                    Digite seu nome por favor
+                </div>
+                <div *ngIf="nome.errors?.['minlength']">
+                    O nome tem que conter no mínimo 4 caracteres
+                </div>
+                <div *ngIf="nome.errors?.['maxlength']">
+                    O nome tem que conter no máximo 20 caracteres
+                </div>
+            </div>
         </div>
         <div class="form-group">
             <label for="sobrenome">Sobrenome:</label>
-            <input type="text" name="sobrenome" id="sobrenome" [(ngModel)]="empregado.sobrenome" class="form-control">
+            <input type="text" name="sobrenome" id="sobrenome" [(ngModel)]="empregado.sobrenome" class="form-control" required minlength="4" maxlength="20" #sobrenome = "ngModel">
+            <div class="alert alert-danger" *ngIf="sobrenome && sobrenome.invalid && (sobrenome.dirty || sobrenome.touched)">
+                <div *ngIf="sobrenome.errors?.['required']">   <!-- O '?.' é para garantir que o objeto de erros não seja nulo antes de tentar acessar as propriedades. Isso evita que o erro seja gerado. -->
+                    Digite seu sobrenome por favor
+                </div>
+                <div *ngIf="sobrenome.errors?.['minlength']">
+                    O sobrenome tem que conter no mínimo 4 caracteres
+                </div>
+                <div *ngIf="sobrenome.errors?.['maxlength']">
+                    O sobrenome tem que conter no máximo 20 caracteres
+                </div>
+            </div>
         </div>
         <div class="form-group">
             <label for="email">Email:</label>
-            <input type="text" name="email" id="email" [(ngModel)]="empregado.email" class="form-control">
+            <input type="text" name="email" id="email" [(ngModel)]="empregado.email" class="form-control" required pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" #email="ngModel">
+            <div class="alert alert-danger" *ngIf="email && email.invalid && (email.dirty || email.touched)">
+                <div *ngIf="email.errors?.['required']">
+                    Digite seu email por favor
+                </div>
+                <div *ngIf="email.errors?.['pattern']">
+                    Por favor digite o email corretamente
+                </div>
+            </div>
         </div>
         <div class="form-group">
-            <button type="button" class="btn btn-dark" (click)="onSubmit()">Cadastar</button>
+            <button type="button" [disabled]="!empregadoForm.form.valid" (click)="onSubmit()" class="btn btn-dark">Cadastar</button>
         </div>
     </form>
 </div>
+
+
+<!-- Conhecendo as propriedades:
+
+*ngIf: É uma diretiva estrutural do Angular que permite exibir ou ocultar um elemento com base em uma condição.
+
+nome.invalid: Essa propriedade indica se o campo de formulário é inválido, ou seja, não atende às regras de validação definidas. Isso 
+                pode acontecer, por exemplo, se o campo é marcado como required e o usuário não preenche nada, ou se o campo tem uma regra 
+                de tamanho mínimo e o usuário não digita o mínimo de caracteres.
+
+nome.dirty: Essa propriedade indica se o campo de formulário foi modificado pelo usuário, ou seja, se o valor original foi alterado. Isso é útil 
+            para saber se o usuário realmente fez alguma alteração no campo, o que pode ser importante para decidir se deve ou não exibir uma 
+            mensagem de validação.
+
+nome.touched: Essa propriedade indica se o campo de formulário foi tocado (clicado ou focado) pelo usuário. Isso é útil para saber se o usuário 
+                interagiu com o campo, o que pode ser importante para decidir se deve ou não exibir uma mensagem de validação.
+
+Então, a condição *ngIf="sobrenome && sobrenome.invalid && (sobrenome.dirty || sobrenome.touched)" significa que a mensagem de validação será 
+exibida se:
+
+    1. O campo de formulário sobrenome existir (não for null ou undefined).
+    2. O campo de formulário sobrenome for inválido (não atender às regras de validação).
+    3. O campo de formulário sobrenome tiver sido modificado pelo usuário (sujo) ou tocado (clicado ou focado) pelo usuário.
+-->
